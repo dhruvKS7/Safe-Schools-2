@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400&family=Oxygen&display=swap');
+
+body {
+    font-family: 'Oxygen', sans-serif;
+    padding: 20px 60px 40px 60px;
+}
+
+#nav {
+    z-index: 5;
+    position: sticky;
+    top: 20px;
+    font-size: 20px;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(8, 58, 138);
+    border-radius: 15px;
+}
+
+#nav li {
+    float: right;
+}
+
+#name {
+    margin-right: 750px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#nav li a:hover:not(.active) {
+    background-color: black;
+}
+
+.active {
+    background-color: goldenrod;
+}
+
+.searchContent {
+    color: white;
+    border-radius: 15px;
+    background-color: gray;
+    font-size: 20px;
+    padding: 30px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.searchContent:hover {
+    background-color: goldenrod;
+}
+
+.schoolDesc {
+    display: inline-block;
+    align-self: center;
+    margin-left: 50px;
+    flex-grow: 8;
+}
+
+.schoolImg {
+    position: relative;
+    display: inline-block;
+}
+
+.viewSchool {
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 15px;
+    background-color: rgb(8, 58, 138);
+    color: white;
+    border: none;
+}
+
+.searchB {
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    background-color: rgb(8, 58, 138);
+    border: none;
+}

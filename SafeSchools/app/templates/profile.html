@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Safe Schools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/profile.css') }}" type="text/css">
+    <!-- <script src="{{ url_for('static', filename='script/index.js') }}" type="text/javascript"></script> -->
+</head>
+
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a href="{{ url_for('favorites') }}">Favorites</a></li>
+            <li><a href="{{ url_for('ratings') }}">Ratings</a></li>
+            <li><a class="active" href="#">Profile</a></li>
+            <li><a href="{{ url_for('search') }}">Search</a></li>
+            <li id="name">Safe Schools</li>
+        </ul>
+    </nav>
+    <br></br>
+    <form action="/logout" method="POST">
+        <button class="profileB2" type="submit">Logout</button>    
+    </form>
+    <br></br>
+    <div id="profileContent">
+        <h1>Edit Your Profile Information</h1>
+        <form action="/updateProfile" method="POST">
+            <label>First Name:</label>
+            <input type="text" id="firstname" name="firstname" value={{first}}>
+            <br></br>
+            <label>Last Name:</label>
+            <input type="text" id="lastname" name="lastname" value={{last}}>
+            <br></br>
+            <button class="profileB" type="submit">Update Information</button>    
+        </form>
+    </div>
+</body>
+
+</html>

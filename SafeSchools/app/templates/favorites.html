@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Safe Schools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/favorites.css') }}" type="text/css">
+    <!-- <script src="{{ url_for('static', filename='script/index.js') }}" type="text/javascript"></script> -->
+</head>
+
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a class="active" href="#">Favorites</a></li>
+            <li><a href="{{ url_for('ratings') }}">Ratings</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('search') }}">Search</a></li>
+            <li id="name">Safe Schools</li>
+        </ul>
+    </nav>
+    <br></br>
+    {% for school in favorites %}
+    <form action="/removeFavorite" method="POST">
+        <div class="favoriteContent" id={{school[0]}}>
+            <input style="display: none" type="text" id="schoolID" name="schoolID" value={{school[0]}}>
+            {% if 'Elementary' in school[2] %}
+            <img class="schoolImg"
+                src="https://mychesterfieldschools.com/rees/wp-content/uploads/sites/67/2021/06/Reams-Road-Elementary-photo.jpg"
+                alt="elementary">
+            {% elif 'Middle' in school[2] %}
+            <img class="schoolImg"
+                src="https://daily.jstor.org/wp-content/uploads/2017/08/generic_middle_school_1050x700.jpg"
+                alt="middle">
+            {% elif 'High' in school[2] %}
+            <img class="schoolImg"
+                src="https://wold.imgix.net/images/Expertises/EDU/High%20School/Content%20Images/New-Design-High-school-2.jpg?auto=compress%2Cformat&fit=clip&q=95&w=2000"
+                alt="high">
+            {% else %}
+            <img class="schoolImg"
+                src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?cs=srgb&dl=pexels-idriss-meliani-2982449.jpg&fm=jpg"
+                alt="school">
+            {% endif %}
+            <div class="favoriteDesc">
+                <p>{{school[1]}}</p>
+                <p>{{school[2]}}</p>
+            </div>
+            <button type="submit" class="removeFav">Remove</button>
+        </div>
+    </form>
+    <br></br>
+    {% endfor %}
+</body>
+
+</html>

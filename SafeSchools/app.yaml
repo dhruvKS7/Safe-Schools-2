@@ -1,0 +1,17 @@
+runtime: python38
+
+instance_class: F1
+
+env_variables:
+  MYSQL_USER: 'root'
+  MYSQL_PASSWORD: 'mayrootrmcf7'
+  MYSQL_DB: 'SafeSchools'
+  MYSQL_HOST: '34.136.142.33'
+
+handlers:
+
+- url: /script
+  static_dir: static/script
+
+- url: /styles
+  static_dir: static/styles
