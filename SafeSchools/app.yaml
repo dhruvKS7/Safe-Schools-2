@@ -4,7 +4,7 @@ instance_class: F1
 
 env_variables:
   MYSQL_USER: 'root'
-  MYSQL_PASSWORD: 'mayrootrmcf7'
+  MYSQL_PASSWORD: '###'
   MYSQL_DB: 'SafeSchools'
   MYSQL_HOST: '34.136.142.33'
 
